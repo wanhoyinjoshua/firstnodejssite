@@ -1,35 +1,27 @@
-//set up my https 
-
+//setting up my https downdown
 var http = require("http");
-const path = require('path');
-const express = require("express");
-var router = express.Router();
-const bodyParser= require('body-parser')
+
+var server = http.createServer(function(req , res ){
+    res.writeHead(200, {'Content-Type':'text/html'});
+    var url = req.url
+        if(url==='/home'){
+            res.write("home");
+        }
+        if(url==='/work'){
+            res.write("work");
+        }
+})
+//server upup
 
 
-
-
-var app = express();
-
-
-
-
-
-
-
-
-
-
-app.get('/',(req,res)=>{
-    res.render('index', {msg:'welcome'});
-    console.log("HIHIIHIHI")
-
+server.listen(3000, function(){
+    console.log("listening at 3000")
 })
 
 
 
-app.listen(app.get('port'),()=>{
-    console.log(`You are listeining to ${app.get('port')}`);
-});
+
+
+
 
 
