@@ -6,6 +6,9 @@ var server_host = process.env.YOUR_HOST || '0.0.0.0';
 var server = http.createServer(function(req , res ){
     res.writeHead(200, {'Content-Type':'text/html'});
     var url = req.url
+        if(url==='/'){
+            res.write("main");
+        }
         if(url==='/home'){
             res.write("home");
         }
