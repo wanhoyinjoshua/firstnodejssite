@@ -14,9 +14,11 @@ var server = http.createServer(function(req , res ){
 //server upup
 
 
-server.listen(3000, function(){
+server.listen(process.env.PORT || 5000 , function(){
     console.log("listening at 3000")
 })
+
+
 
 
 
