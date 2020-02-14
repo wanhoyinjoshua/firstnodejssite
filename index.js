@@ -18,11 +18,6 @@ var app = express();
 
 
 
-app.set('views',path.join(__dirname , 'views'));
-app.set('view engine','pug');
-app.set('port',3000);
-app.use(express.static('public'))
-app.use(bodyParser.urlencoded({extended: false}));
 
 
 app.get('/',(req,res)=>{
@@ -30,13 +25,7 @@ app.get('/',(req,res)=>{
     console.log("HIHIIHIHI")
 
 })
-app.post('/success',(req,res)=>{
-    console.log("yayy");
-    res.render('personalpage');
-    console.log(req.body)
 
-   
-})
 
 
 app.listen(app.get('port'),()=>{
